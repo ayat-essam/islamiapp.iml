@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/apptheme.dart';
+import 'package:islamiapp/homScreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( IslamicApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class IslamicApp extends StatelessWidget {
 
-  // This widget is the root of your application.
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+debugShowCheckedModeBanner: false,
+      routes: {
+  HomeScreen.routeName: (_) => HomeScreen(),
 
+      },
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      // themeMode: ThemeData.light(),
     );
   }
 }
