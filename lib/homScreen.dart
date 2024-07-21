@@ -33,6 +33,12 @@ List<Widget> tabs = [
 
       ),
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Text('اسلامي'),
+          centerTitle: true,
+
+        ),
         body: tabs[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex ,
@@ -40,6 +46,7 @@ List<Widget> tabs = [
             currentIndex = (index);
             setState(() {});
           },
+
            items: [
              BottomNavigationBarItem(
         icon: ImageIcon(AssetImage('assets/image/radio.png'),)

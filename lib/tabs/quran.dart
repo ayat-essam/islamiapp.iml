@@ -14,14 +14,20 @@ class quran extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-        image:DecorationImage(
-        image: AssetImage('assets/image/bg3.png'),
-    fit: BoxFit.cover,
-      ),
-          color: Colors.brown,
-        ),
-    );
+   return Column(
+     children: [
+     Image.asset('assets/image/Screenshot (1).png',height: MediaQuery.of(context).size.height*0.25,),
+       SizedBox(height: 12,),
+      
+       Expanded(
+         child: ListView.builder(
+           itemBuilder: (_, index) => Text(ArSuras[index],style: Theme.of(context).textTheme.headlineSmall,
+           textAlign: TextAlign.center,),
+
+           itemCount: ArSuras.length ,
+         ),
+       )
+     ],
+   );
   }
 }
