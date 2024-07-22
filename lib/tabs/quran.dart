@@ -20,14 +20,23 @@ class quran extends StatelessWidget {
        SizedBox(height: 12,),
       
        Expanded(
-         child: ListView.builder(
-           itemBuilder: (_, index) => Text(ArSuras[index],style: Theme.of(context).textTheme.headlineSmall,
-           textAlign: TextAlign.center,),
-
+         child: ListView.separated(
+           itemBuilder: (_, index) => InkWell(
+             onTap: (){},
+             child: Text(ArSuras[index],style: Theme.of(context).textTheme.headlineSmall,
+             textAlign: TextAlign.center,),
+           ),
+            separatorBuilder: (_, index) => SizedBox(height: 12,),
            itemCount: ArSuras.length ,
          ),
        )
      ],
    );
   }
+}
+
+class SuraDetailsArgu {
+  String SuraName;
+  int index ;
+  SuraDetailsArgu({required this.SuraName, required this.index});
 }

@@ -20,7 +20,7 @@ class AppTheme extends StatelessWidget {
   scaffoldBackgroundColor: Colors.transparent,
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
    type: BottomNavigationBarType.fixed,
-   backgroundColor: gold,
+   backgroundColor: lightprimary,
    unselectedItemColor: white,
    selectedItemColor: black
   ),

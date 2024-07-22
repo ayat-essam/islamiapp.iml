@@ -35,7 +35,7 @@ List<Widget> tabs = [
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text('اسلامي'),
+          title: Text('اسلامي',),
           centerTitle: true,
 
         ),
