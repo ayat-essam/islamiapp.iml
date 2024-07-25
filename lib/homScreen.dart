@@ -18,7 +18,7 @@ List<Widget> tabs = [
   hadis(),
   quran(),
   radio(),
-  sebha(),
+  Sebha(),
   setting(),
 ];
 

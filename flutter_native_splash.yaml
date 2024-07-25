@@ -1,9 +1,15 @@
 flutter_native_splash:
-  color: "#42a5f5"
-  image: "assets/image/Splash.png"
-  android: true
-  ios: true
-  web: true
-  android_12:
-    icon_background_color: "#ffffff"
-    image: "assets/image/andriod12splash.png"
+
+  color: "0xffFFFFFF"
+#  background_image: "assets/image/andriod12splash.png"
+
+
+  image: "assets/image/andriod12splash.png"
+
+
+#  branding: assets/dart.png
+
+
+#  branding_mode: bottom
+
+

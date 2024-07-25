@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/sura_details_screen.dart';
 
 class quran extends StatelessWidget {
   List<String>ArSuras = ["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
@@ -21,9 +22,12 @@ class quran extends StatelessWidget {
       
        Expanded(
          child: ListView.separated(
-           itemBuilder: (_, index) => InkWell(
-             onTap: (){},
-             child: Text(ArSuras[index],style: Theme.of(context).textTheme.headlineSmall,
+           itemBuilder: (_, index) => GestureDetector(
+             onTap: () => Navigator.of(context).pushNamed(suraDetailsScr.routeName,
+             arguments: SuraDetailsArgu(
+                 SuraName: ArSuras[index], index: index)),
+             child: Text(
+               ArSuras[index],style: Theme.of(context).textTheme.headlineSmall,
              textAlign: TextAlign.center,),
            ),
             separatorBuilder: (_, index) => SizedBox(height: 12,),
