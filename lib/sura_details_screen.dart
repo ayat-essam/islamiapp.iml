@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:islamiapp/apptheme.dart';
 import 'package:islamiapp/tabs/quran.dart';
+import 'package:islamiapp/widget/loading_indecetor.dart';
 
-class suraDetailsScr extends StatelessWidget {
+class suraDetailsScr extends StatefulWidget {
 static const String routeName = '/sura_details';
-List<String> ayat = [
-  'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ',
-    'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ',
-      'الرَّحْمَنِ الرَّحِيم',
-           'مَالِكِ يَوْمِ الدِّينِ',
-      'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ',
-      'هْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ',
-    'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّين',
 
-];
+  @override
+  State<suraDetailsScr> createState() => _suraDetailsScrState();
+}
+
+class _suraDetailsScrState extends State<suraDetailsScr> {
+List<String> ayat = [];
+late SuraDetailsArgu argu;
+
 @override
   Widget build(BuildContext context) {
-    SuraDetailsArgu argu=
-    ModalRoute.of(context)!.settings.arguments as SuraDetailsArgu;
+    argu= ModalRoute.of(context)!.settings.arguments as SuraDetailsArgu;
+    if(ayat.isEmpty) {
+      loadSura();
+    }
     return Container(
       decoration: BoxDecoration(
         color: AppTheme.gold,
@@ -39,12 +42,13 @@ List<String> ayat = [
         padding: EdgeInsets.all(20),
       margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.07,
       horizontal: MediaQuery.of(context).size.width * 0.02),
-      
+
       decoration: BoxDecoration(
       color: AppTheme.white,
       borderRadius: BorderRadius.circular(25),
       ),
-        child: ListView.builder(
+        child: ayat.isEmpty?
+        LoadingIndicator():ListView.builder(
           itemBuilder: (_, index) => Text(ayat[index],
           style: Theme.of(context).textTheme.titleLarge,
           textAlign: TextAlign.center,),
@@ -54,4 +58,15 @@ List<String> ayat = [
     ),
     );
   }
+
+ Future <void> loadSura() async{
+  print(" inside fun");
+  String sura = await rootBundle.loadString("assets/filesquran/${argu.index+1}.txt");
+  ayat = sura.split("\n\r");
+  setState(() {
+
+  });
+  }
+
 }
+

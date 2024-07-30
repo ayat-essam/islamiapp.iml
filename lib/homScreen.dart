@@ -15,7 +15,7 @@ static const String routeName = '/';
 class _HomeScreenState extends State<HomeScreen> {
 int currentIndex = 0;
 List<Widget> tabs = [
-  hadis(),
+  Hadis(),
   quran(),
   radio(),
   Sebha(),
