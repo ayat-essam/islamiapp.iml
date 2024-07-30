@@ -45,7 +45,19 @@ class AppTheme extends StatelessWidget {
          backgroundColor: darkprimary,
          unselectedItemColor: white,
          selectedItemColor: gold
-     )
+     ),
+      textTheme: TextTheme(
+  headlineSmall: TextStyle(
+  color: Colors.white,
+      fontSize: 25,
+      fontWeight: FontWeight.w400
+  ),
+      titleLarge: TextStyle(
+ color: gold,
+ fontSize: 20,
+ fontWeight: FontWeight.w400
+ ),
+ ),
  );
 
   @override

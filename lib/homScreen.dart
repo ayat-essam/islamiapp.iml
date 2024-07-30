@@ -47,16 +47,16 @@ List<Widget> tabs = [
             setState(() {});
           },
 
-           items: [
-             BottomNavigationBarItem(
-        icon: ImageIcon(AssetImage('assets/image/radio.png'),)
-        ,label: 'Radio'),
+           items: [ BottomNavigationBarItem(
+               icon: ImageIcon(AssetImage('assets/image/quran-quran-svgrepo-com.png'),)
+               ,label: 'Hades'),
+
              BottomNavigationBarItem(
                  icon: ImageIcon(AssetImage('assets/image/quran.png'),)
                  ,label: 'Quran Kareem'),
-    BottomNavigationBarItem(
-    icon: ImageIcon(AssetImage('assets/image/quran-quran-svgrepo-com.png'),)
-    ,label: 'Hades'),
+              BottomNavigationBarItem(
+                 icon: ImageIcon(AssetImage('assets/image/radio.png'),)
+                 ,label: 'Radio'),
 
     BottomNavigationBarItem(
     icon: ImageIcon(AssetImage('assets/image/sebha.png'),)
