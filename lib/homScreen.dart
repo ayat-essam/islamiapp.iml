@@ -4,6 +4,7 @@ import 'package:islamiapp/tabs/quran.dart';
 import 'package:islamiapp/tabs/radio.dart';
 import 'package:islamiapp/tabs/sebha.dart';
 import 'package:islamiapp/tabs/setting.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
 static const String routeName = '/';
@@ -24,10 +25,13 @@ List<Widget> tabs = [
 
   @override
   Widget build(BuildContext context) {
+    Setting setting = Provider.of<Setting>(context);
     return Container(
       decoration: BoxDecoration(
         image:DecorationImage(
-          image: AssetImage('assets/image/bg3.png'),
+          image: AssetImage(setting.themeMode==ThemeMode.dark?
+          'assets/image/dark_bg.png':
+          'assets/image/bg3.png'),
           fit: BoxFit.cover,
         ),
 
@@ -57,11 +61,9 @@ List<Widget> tabs = [
               BottomNavigationBarItem(
                  icon: ImageIcon(AssetImage('assets/image/radio.png'),)
                  ,label: 'Radio'),
-
-    BottomNavigationBarItem(
-    icon: ImageIcon(AssetImage('assets/image/sebha.png'),)
-    ,label: 'Sebha'),
-
+                BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/image/sebha.png'),)
+                 ,label: 'Sebha'),
              BottomNavigationBarItem(
                  icon:Icon(Icons.settings,)
                  ,label: 'setting'),

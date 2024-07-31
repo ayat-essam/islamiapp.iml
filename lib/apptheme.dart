@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTheme extends StatelessWidget {
- static const Color lightprimary = Color(0xffB7935F);
+ static const Color lightprimary = Color(0xffF8F8F8);
  static const Color darkprimary = Color(0xff141A2E);
  static const Color black = Color(0xff242424);
  static const Color white = Color(0xffF8F8F8);
@@ -20,7 +20,7 @@ class AppTheme extends StatelessWidget {
   scaffoldBackgroundColor: Colors.transparent,
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
    type: BottomNavigationBarType.fixed,
-   backgroundColor: lightprimary,
+   backgroundColor: gold,
    unselectedItemColor: white,
    selectedItemColor: black
   ),
@@ -36,6 +36,10 @@ class AppTheme extends StatelessWidget {
              fontWeight: FontWeight.w400
  ),
      ),
+   switchTheme: SwitchThemeData(
+     thumbColor: MaterialStatePropertyAll(white),
+     trackColor: MaterialStatePropertyAll(AppTheme.gold)
+   )
  );
   static ThemeData darkTheme = ThemeData(
      primaryColor: darkprimary,
@@ -48,7 +52,7 @@ class AppTheme extends StatelessWidget {
      ),
       textTheme: TextTheme(
   headlineSmall: TextStyle(
-  color: Colors.white,
+  color: gold,
       fontSize: 25,
       fontWeight: FontWeight.w400
   ),
@@ -58,6 +62,10 @@ class AppTheme extends StatelessWidget {
  fontWeight: FontWeight.w400
  ),
  ),
+      switchTheme: SwitchThemeData(
+          thumbColor: MaterialStatePropertyAll(white),
+          trackColor: MaterialStatePropertyAll(AppTheme.gold)
+      )
  );
 
   @override

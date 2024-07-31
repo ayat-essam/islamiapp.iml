@@ -9,12 +9,16 @@ class Hadis extends StatefulWidget {
 }
 
 class _HadisState extends State<Hadis> {
-
   List<Hadith> ahadeth = [];
 
   @override
+  void initState() {
+    super.initState();
+    loadAhadeth();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    loadAhadeth(); // Ensure the method is called only once
     return Column(
       children: [
         Image.asset(
@@ -23,9 +27,9 @@ class _HadisState extends State<Hadis> {
         ),
         SizedBox(height: 12),
         Expanded(
-          child:ahadeth.isEmpty?
-          LoadingIndicator():
-          ListView.separated(
+          child: ahadeth.isEmpty
+              ? LoadingIndicator()
+              : ListView.separated(
             itemBuilder: (_, index) => GestureDetector(
               onTap: () => Navigator.of(context).pushNamed(
                 hadithDetailes.routeName,
