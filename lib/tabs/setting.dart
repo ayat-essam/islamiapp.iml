@@ -52,7 +52,7 @@ class setting extends StatelessWidget {
   }
 }
 class Setting with ChangeNotifier {
-ThemeMode themeMode = ThemeMode.system;
+ThemeMode themeMode = ThemeMode.light;
 String Language = "en";
 void changeMode(ThemeMode selectedMode){
   themeMode = selectedMode;

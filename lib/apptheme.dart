@@ -14,7 +14,7 @@ class AppTheme extends StatelessWidget {
    titleTextStyle: TextStyle(
     fontSize: 30,
     fontWeight:FontWeight.bold,
-    color: Colors.black
+    color: gold
    )
   ),
   scaffoldBackgroundColor: Colors.transparent,
@@ -26,7 +26,7 @@ class AppTheme extends StatelessWidget {
   ),
      textTheme: TextTheme(
      headlineSmall: TextStyle(
-      color: Colors.black,
+      color: AppTheme.gold,
       fontSize: 24,
       fontWeight: FontWeight.w400
      ),
