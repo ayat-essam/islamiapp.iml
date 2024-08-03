@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamiapp/apptheme.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../preferencesHelper.dart';
 
 class setting extends StatelessWidget {
 
@@ -34,12 +35,13 @@ class setting extends StatelessWidget {
                 ),
               DropdownButtonHideUnderline(
            child: DropdownButton<String>
-             ( value: setting.Language,
+             ( value: setting.language,
                   items:[ DropdownMenuItem(value: "en", child: Text("English"),),
                   DropdownMenuItem(value: "ar", child: Text("العربيه"),)],
                   onChanged: (selectedValue){
                 if (selectedValue == null)return;
                 setting.changeLanguage(selectedValue);
+
                   },
            borderRadius: BorderRadius.circular(20),
            )
@@ -53,14 +55,27 @@ class setting extends StatelessWidget {
   }
 }
 class Setting with ChangeNotifier {
-ThemeMode themeMode = ThemeMode.light;
-String Language = "en";
-void changeMode(ThemeMode selectedMode){
-  themeMode = selectedMode;
-  notifyListeners();
-}
-void changeLanguage(String lang){
-  Language = lang;
-  notifyListeners();
-}
+  ThemeMode _themeMode;
+  String _language;
+
+  Setting({required String initialLanguage, required ThemeMode initialThemeMode})
+      : _language = initialLanguage,
+        _themeMode = initialThemeMode;
+
+  ThemeMode get themeMode => _themeMode;
+  String get language => _language;
+
+  bool get isDark => _themeMode == ThemeMode.dark;
+
+  void changeMode(ThemeMode selectedMode) {
+    _themeMode = selectedMode;
+    PreferencesHelper.setthemeMode(selectedMode == ThemeMode.dark ? 'dark' : 'light');
+    notifyListeners();
+  }
+
+  void changeLanguage(String lang) {
+    _language = lang;
+    PreferencesHelper.setLang(lang);
+    notifyListeners();
+  }
 }

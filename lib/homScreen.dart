@@ -27,7 +27,7 @@ List<Widget> tabs = [
   @override
   Widget build(BuildContext context) {
     Setting setting = Provider.of<Setting>(context);
-    EdgeInsetsDirectional.only()
+
     return Container(
       decoration: BoxDecoration(
         image:DecorationImage(

@@ -8,5 +8,11 @@
   "language": "اللغة",
   "darkMood": "الوضع المظلم",
   "countOfTasbeehs": "عدد التسبيحات",
-  "quranRadio": "اذاعة القراءن الكريم"
+  "quranRadio": "اذاعة القراءن الكريم",
+  "@darkMood": {
+    "description": "Label for dark mode switch"
+  },
+  "@language": {
+    "description": "Label for language selection"
+  }
 }

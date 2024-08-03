@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/apptheme.dart';
 import 'package:islamiapp/homScreen.dart';
+import 'package:islamiapp/preferencesHelper.dart';
 import 'package:islamiapp/sura_details_screen.dart';
 import 'package:islamiapp/tabs/hadith_detailes_scr.dart';
 import 'package:islamiapp/tabs/setting.dart';
@@ -8,10 +9,19 @@ import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
- void main() {
+ void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+
+   String savedLang = await PreferencesHelper.getLanguage()??"en";
+   String saveMode = await PreferencesHelper.getTheme()??"light";
+
   runApp(
       ChangeNotifierProvider(
-      create: (context) => Setting(),
+      create: (context) => Setting(
+          initialLanguage : savedLang,
+          initialThemeMode : saveMode == 'dark'? ThemeMode.dark:ThemeMode.light
+
+      ),
   child: IslamicApp(),
       ),
       );
@@ -30,15 +40,14 @@ debugShowCheckedModeBanner: false,
         '/hadith_detailes': (context) => hadithDetailes(),
 
       },
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: Setting().themeMode,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: setting.themeMode,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: Locale(setting.language),
 
 
-
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
-    supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale(setting.Language),
 
     );
     }

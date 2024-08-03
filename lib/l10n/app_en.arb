@@ -8,5 +8,12 @@
   "language": "Language",
   "darkMood": "Dark Mood",
   "countOfTasbeehs": "Count Of Tasbeehs",
-  "quranRadio": "Quran Radio"
+  "quranRadio": "Quran Radio",
+
+  "@darkMood": {
+    "description": "Label for dark mode switch"
+  },
+  "@language": {
+    "description": "Label for language selection"
+  }
 }

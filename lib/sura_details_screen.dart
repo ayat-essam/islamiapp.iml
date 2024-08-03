@@ -49,7 +49,7 @@ late SuraDetailsArgu argu;
       horizontal: MediaQuery.of(context).size.width * 0.02),
       decoration: BoxDecoration(
       color: Provider.of<Setting>(context).themeMode == ThemeMode.light? AppTheme.white :
-       AppTheme.darkprimary ,
+       AppTheme.darkPrimary ,
       borderRadius: BorderRadius.circular(25),
       ),
         child: ayat.isEmpty?

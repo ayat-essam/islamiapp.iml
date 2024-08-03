@@ -39,7 +39,7 @@ class hadithDetailes extends StatelessWidget {
 
           decoration: BoxDecoration(
             color:Provider.of<Setting>(context).themeMode == ThemeMode.light? AppTheme.white :
-            AppTheme.darkprimary,
+            AppTheme.darkPrimary,
             borderRadius: BorderRadius.circular(25),
           ),
           child: ListView.builder(
