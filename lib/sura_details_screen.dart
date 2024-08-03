@@ -65,7 +65,7 @@ late SuraDetailsArgu argu;
   }
 
  Future <void> loadSura() async{
-  print(" inside fun");
+
   String sura = await rootBundle.loadString("assets/filesquran/${argu.index+1}.txt");
   ayat = sura.split("\n\r");
   setState(() {

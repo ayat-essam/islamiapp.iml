@@ -31,14 +31,14 @@ class AppTheme extends StatelessWidget {
       fontWeight: FontWeight.w400
      ),
          titleLarge: TextStyle(
-             color: Colors.black,
+             color:gold,
              fontSize: 24,
              fontWeight: FontWeight.w400
  ),
      ),
    switchTheme: SwitchThemeData(
-     thumbColor: MaterialStatePropertyAll(white),
-     trackColor: MaterialStatePropertyAll(AppTheme.gold)
+     thumbColor: MaterialStatePropertyAll(Colors.grey),
+     trackColor: MaterialStatePropertyAll(Colors.grey)
    )
  );
   static ThemeData darkTheme = ThemeData(

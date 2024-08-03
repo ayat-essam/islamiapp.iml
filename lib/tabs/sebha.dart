@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-
 import 'package:islamiapp/apptheme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Sebha  extends StatefulWidget {
     @override
@@ -49,10 +49,10 @@ class _SebhaState extends State<Sebha> {
                 ,),
             ),
             SizedBox(height: 20,),
-            Text("عدد التسبيحات",style: TextStyle(
+            Text(AppLocalizations.of(context)!.countOfTasbeehs,style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Colors.black54,
+              color: AppTheme.gold,
               
             ),),
             SizedBox(height: 10,),

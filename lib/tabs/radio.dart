@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/apptheme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class radio extends StatelessWidget {
 
@@ -13,7 +14,7 @@ class radio extends StatelessWidget {
        children: [
          Image(image: AssetImage("assets/image/radio_image.png")),
          SizedBox(height: 15,),
-         Text(("اذاعة القران الكريم"),style: TextStyle(
+         Text((AppLocalizations.of(context)!.quranRadio),style: TextStyle(
            fontSize: 20,
            fontWeight: FontWeight.bold,
            color:AppTheme.gold
@@ -22,9 +23,9 @@ class radio extends StatelessWidget {
          Row(
            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
            children: [
-             IconButton(onPressed: (){}, icon: Icon (Icons.skip_previous,size:20)),
-             IconButton(onPressed: (){}, icon: Icon (Icons.play_arrow)),
-             IconButton(onPressed: (){}, icon: Icon (Icons.skip_next))
+             IconButton(onPressed: (){}, icon: Icon (Icons.skip_previous,color: AppTheme.gold,)),
+             IconButton(onPressed: (){}, icon: Icon (Icons.play_arrow,color: AppTheme.gold,)),
+             IconButton(onPressed: (){}, icon: Icon (Icons.skip_next,color: AppTheme.gold,))
            ],
          )
        ],

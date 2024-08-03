@@ -3,12 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:islamiapp/tabs/hadith_detailes_scr.dart';
 import 'package:islamiapp/widget/loading_indecetor.dart';
 
-class Hadis extends StatefulWidget {
+class hadis extends StatefulWidget {
   @override
-  State<Hadis> createState() => _HadisState();
+  State<hadis> createState() => _HadisState();
 }
 
-class _HadisState extends State<Hadis> {
+class _HadisState extends State<hadis> {
   List<Hadith> ahadeth = [];
 
   @override

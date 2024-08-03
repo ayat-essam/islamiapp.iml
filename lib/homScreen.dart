@@ -5,6 +5,7 @@ import 'package:islamiapp/tabs/radio.dart';
 import 'package:islamiapp/tabs/sebha.dart';
 import 'package:islamiapp/tabs/setting.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
 static const String routeName = '/';
@@ -16,7 +17,7 @@ static const String routeName = '/';
 class _HomeScreenState extends State<HomeScreen> {
 int currentIndex = 0;
 List<Widget> tabs = [
-  Hadis(),
+  hadis(),
   quran(),
   radio(),
   Sebha(),
@@ -26,6 +27,7 @@ List<Widget> tabs = [
   @override
   Widget build(BuildContext context) {
     Setting setting = Provider.of<Setting>(context);
+    EdgeInsetsDirectional.only()
     return Container(
       decoration: BoxDecoration(
         image:DecorationImage(
@@ -39,7 +41,7 @@ List<Widget> tabs = [
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text('اسلامي',),
+          title: Text(AppLocalizations.of(context)!.islami,),
           centerTitle: true,
 
         ),
@@ -53,20 +55,20 @@ List<Widget> tabs = [
 
            items: [ BottomNavigationBarItem(
                icon: ImageIcon(AssetImage('assets/image/quran-quran-svgrepo-com.png'),)
-               ,label: 'Hades'),
+               ,label: AppLocalizations.of(context)!.hadis),
 
              BottomNavigationBarItem(
                  icon: ImageIcon(AssetImage('assets/image/quran.png'),)
-                 ,label: 'Quran Kareem'),
+                 ,label: AppLocalizations.of(context)!.quran),
               BottomNavigationBarItem(
                  icon: ImageIcon(AssetImage('assets/image/radio.png'),)
-                 ,label: 'Radio'),
+                 ,label: AppLocalizations.of(context)!.radio),
                 BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/image/sebha.png'),)
-                 ,label: 'Sebha'),
+                 ,label: AppLocalizations.of(context)!.sebha),
              BottomNavigationBarItem(
                  icon:Icon(Icons.settings,)
-                 ,label: 'setting'),
+                 ,label: AppLocalizations.of(context)!.setting),
            ],
 
       ),

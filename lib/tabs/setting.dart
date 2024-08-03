@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/apptheme.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class setting extends StatelessWidget {
 
@@ -15,8 +16,8 @@ class setting extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
          children: [
-          Text('Dark Mood',
-            style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w500 ),
+          Text(AppLocalizations.of(context)!.darkMood,
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w500, ),
           ),
    Switch(
    value: setting.themeMode == ThemeMode.dark,
@@ -28,7 +29,7 @@ class setting extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text('Language',
+              Text(AppLocalizations.of(context)!.language,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w500)
                 ),
               DropdownButtonHideUnderline(
