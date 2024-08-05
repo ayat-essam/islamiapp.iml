@@ -1,10 +1,10 @@
 flutter_native_splash:
 
-  color: "0xffFFFFFF"
+  color: "FFFFFF"
 #  background_image: "assets/image/andriod12splash.png"
 
 
-  image: "assets/image/andriod12splash.png"
+  image: "assets/image/Group 9.png"
 
 
 #  branding: assets/dart.png
